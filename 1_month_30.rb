@@ -18,5 +18,5 @@ month = {
 # Выводим месяцы у которых 30 дней.
 
 month.each do |name, days|
-    puts name if days == 30
+  puts name if days == 30
 end

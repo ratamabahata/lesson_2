@@ -1,10 +1,9 @@
 # Создаем массив букв алфавита
-alpha = ('A'..'Z').to_a
-puts alpha
-glasn = %w[A E I O U]
-alpha_with_numbers = {}
+alphabet = ('A'..'Z').to_a
+vowel = %w[A E I O U]
+alphabet_with_numbers = {}
 
-alpha.each.with_index(1) do |letter, index| 
-  alpha_with_numbers[letter] = index if glasn.include? letter 
+alphabet.each.with_index(1) do |letter, index| 
+  alphabet_with_numbers[letter] = index if vowel.include? letter 
 end
-puts alpha_with_numbers
+puts alphabet_with_numbers

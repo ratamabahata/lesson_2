@@ -2,19 +2,24 @@
 cart = {}
 sum = 0
 
-loop do
-  print "Введите название товара (или \"stop\"): "
-  name = gets.chomp
-  break if name == "stop"
-  print "цену товара: "
+puts "Введите название товара (или \"stop\"): "
+
+loop do  
+  name = gets.chomp.to_s
+  break if name == 'stop'
+  print 'цену товара: '
   price = gets.chomp.to_f
-  print "кол-во товара: "
+  print 'кол-во товара: '
   count = gets.chomp.to_f
   
-  cart[name] = {"price" => price, "count" => count}  
+  cart[name] = { price: price, count: count }  
 end 
 
-cart.each {|name, hash| sum += hash["price"] * hash["count"]}
-
 puts cart
-puts "Итого: #{sum}"
+
+cart.each do |name, price_count|
+  cost = price_count[:price] * price_count[:count]
+  puts "Цена за #{name} составляет #{cost}"
+  total_cost = total_cost + cost
+  puts "Итоговая сумма зв все покупки составляет #{total_cost}"
+end
