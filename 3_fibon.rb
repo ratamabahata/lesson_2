@@ -1,9 +1,10 @@
-# Создаем массив букв алфавита
-alphabet = ('A'..'Z').to_a
-vowel = %w[A E I O U]
-alphabet_with_numbers = {}
+LIMIT = 100
 
-alphabet.each.with_index(1) do |letter, index| 
-  alphabet_with_numbers[letter] = index if vowel.include? letter 
+fibonacci = [0, 1]
+next_number = 1
+
+while next_number < LIMIT 
+  fibonacci << next_number
+  next_number = fibonacci[-1] + fibonacci[-2]
 end
-puts alphabet_with_numbers
+puts fibonacci

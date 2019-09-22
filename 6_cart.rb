@@ -1,6 +1,6 @@
 # создаем пустой массив и сумму
 cart = {}
-sum = 0
+total_cost = 0
 
 puts "Введите название товара (или \"stop\"): "
 
@@ -12,14 +12,14 @@ loop do
   print 'кол-во товара: '
   count = gets.chomp.to_f
   
-  cart[name] = { price: price, count: count }  
+  cart[name] = { p: price, c: count }  
 end 
 
 puts cart
 
 cart.each do |name, price_count|
-  cost = price_count[:price] * price_count[:count]
+  cost = price_count[:p] * price_count[:c]
   puts "Цена за #{name} составляет #{cost}"
-  total_cost = total_cost + cost
-  puts "Итоговая сумма зв все покупки составляет #{total_cost}"
+  total_cost = total_cost + cost  
+  puts "Итоговая сумма за все покупки составляет #{total_cost}"
 end
